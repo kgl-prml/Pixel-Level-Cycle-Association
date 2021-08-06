@@ -11,7 +11,7 @@ We test our codes with two NVIDIA Tesla V100 (32G) GPU cards.
 See ```experiments/data/```
 
 ## Pre-trained Model
-Following general practice, our training starts from [ResNet-101](https://drive.google.com/file/d/11ULk5WkPVMUmuEs8nmMJVgm5gkt9ZMfN/view?usp=sharing) backbone pretrained on ImageNet.
+Following general practice, our training starts from [ResNet-101](https://drive.google.com/file/d/11ULk5WkPVMUmuEs8nmMJVgm5gkt9ZMfN/view?usp=sharing) backbone pretrained on ImageNet. Please download the weight file and put it under the ```model``` directory. 
 
 ## Training
 For GTAV to CityScapes:
@@ -54,5 +54,6 @@ If you have any questions, please contact me via kgl.prml@gmail.com.
 
 ## Thanks to third party
 torchvision 
+
 [LovaszSoftmax](https://github.com/bermanmaxim/LovaszSoftmax)
 
