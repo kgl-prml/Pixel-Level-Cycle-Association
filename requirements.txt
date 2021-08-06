@@ -1,0 +1,4 @@
+easydict==1.9
+imageio==2.9.0
+PyYAML==5.4.1
+torch==1.8.0

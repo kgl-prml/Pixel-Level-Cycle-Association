@@ -1,0 +1,25 @@
+DATASET:
+  NUM_CLASSES: 19
+  SOURCE: 'GTAV'
+  TARGET: 'Cityscapes'
+  DATAROOT_S: './experiments/data/GTAV/'
+  DATAROOT_T: './experiments/data/cityscapes/'
+
+  TEST_SPLIT: 'val.lst'
+  IGNORE_LABEL: 255
+
+DATA_TRANSFORM:
+  LOADSIZE: 1024
+  INPUT_SIZE_T: [730, 1460]
+
+MODEL:
+  NETWORK_NAME: 'deeplabv2_resnet101'
+
+TEST:
+  BATCH_SIZE: 2 
+  DOMAIN: 'target'
+  VISUALIZE: False
+  WITH_AGGREGATION: True
+
+NUM_WORKERS: 6
+SAVE_DIR: './experiments/ckpt/'

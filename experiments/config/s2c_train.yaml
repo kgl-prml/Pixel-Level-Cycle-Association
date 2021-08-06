@@ -1,0 +1,51 @@
+DATASET:
+  NUM_CLASSES: 16
+  SOURCE: 'SYNTHIA'
+  TARGET: 'Cityscapes'
+  DATAROOT_S: './experiments/data/SYNTHIA/'
+  DATAROOT_T: './experiments/data/cityscapes/'
+  DATAROOT_VAL: './experiments/data/cityscapes/'
+
+  TRAIN_SPLIT_S: 'trainval.lst'
+  TRAIN_SPLIT_T: 'train.lst'
+  VAL_SPLIT: 'val.lst'
+
+  IGNORE_LABEL: 255
+
+DATA_TRANSFORM:
+  LOADSIZE: 760
+  CROPSIZE: 730
+  INPUT_SIZE_T: [730, 1460]
+  RANDOM_RESIZE_AND_CROP: True
+
+MODEL:
+  NETWORK_NAME: 'deeplabv2_resnet101'
+
+TRAIN:
+  METHOD: 'association'
+  APPLY_SPAGG: True
+  APPLY_MULTILAYER_ASSOCIATION: True
+
+  TRAIN_BATCH_SIZE: 4
+  ITER_SIZE: 2
+  VAL_BATCH_SIZE: 8
+  LOSS_TYPE: 'SegCrossEntropyLoss'
+  BASE_LR: 2.5e-4
+  LR_MULT: 1.0
+  WEIGHT_DECAY: 0.0005 
+  LR_SCHEDULE: 'poly'
+  MAX_EPOCHS: 8
+  TEST_INTERVAL: 1.0
+  SAVE_CKPT_INTERVAL: 5.0
+
+  # NOTE Use downsampling or radomly crop if the model is too large to fit into memory. The performance may slightly drop
+  USE_CROP: False
+  USE_DOWNSAMPLING: False
+  SCALE_FACTOR: 1.0
+
+POLY:
+  POWER: 0.9
+  MAX_EPOCHS: 10
+
+NUM_WORKERS: 2
+SAVE_DIR: './experiments/ckpt/'
