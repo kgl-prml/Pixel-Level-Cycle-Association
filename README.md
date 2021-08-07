@@ -29,15 +29,16 @@ You can also use the shell scripts provided under directory ```experiment/script
 
 For GTAV to CityScapes:
 ```
-CUDA_VISIBLE_DEVICES=0,1 python ./tools/test.py --cfg ./experiment/config/g2c_test.yaml --weights ${trained_weights} --exp_name g2c_test
+CUDA_VISIBLE_DEVICES=0,1 python ./tools/test.py --cfg ./experiment/config/g2c_test.yaml --weights ${PATH_TRAINED_WEIGHTS} --exp_name g2c_test
 ```
 For SYNTHIA to CityScapes:
 ```
-CUDA_VISIBLE_DEVICES=0,1 python ./tools/test.py --cfg ./experiment/config/s2c_test.yaml --weights ${trained_weights} --exp_name s2c_test
+CUDA_VISIBLE_DEVICES=0,1 python ./tools/test.py --cfg ./experiment/config/s2c_test.yaml --weights ${PATH_TRAINED_WEIGHTS} --exp_name s2c_test
 ```
 
 You can also use the shell scripts provided under directory ```experiment/scripts/test_normal.sh``` to evaluate your model.
 
+Our trained model for both tasks can be downloaded from [PLCA-trained-model](https://drive.google.com/drive/folders/1rXRSFF9Q1laEa_In-hufC3BLm-oR-NFz?usp=sharing) with test mIoU 47.8\% and 46.9\% (16 classes) respectively.
 
 ## Citing 
 Please cite our paper if you use our code in your research:
